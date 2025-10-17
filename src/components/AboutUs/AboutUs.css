@@ -1,0 +1,159 @@
+.about-us {
+  background: hsl(0, 0%, 96%);
+}
+.about-us .background-image {
+  background: linear-gradient(rgba(210, 110, 110, 0.5), rgba(153, 72, 18, 0.5)),
+    url('../../assets/pumps.jpg');
+
+  height: 50vh;
+  background-size: 1545px 1080px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-attachment: fixed; */
+}
+.about-content {
+  position: relative;
+}
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  border-bottom: #333 solid 2px;
+  padding: 5rem 0;
+}
+
+.about-us p {
+  font-size: 1.6rem;
+  padding-top: 2rem;
+  line-height: 1.5;
+  border-radius: 2rem;
+  color: #333;
+}
+.right-image {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+.right-image img {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+  border-radius: 1.6rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+.mission {
+  /* padding: 3rem; */
+  padding: 5rem 0;
+}
+.mission-heading,
+.core-values h1 {
+  width: 50%;
+  margin: auto;
+  text-transform: uppercase;
+  text-align: center;
+ 
+}
+.mission-content {
+  margin-bottom: 3rem;
+}
+
+.about-us .headings {
+  padding: 1rem;
+ 
+  background-color: var(--light-blue);
+  color: #fff;
+  color: var(--dark-blue);
+  border-radius: 1rem;
+}
+.vision-container {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding: 5rem 0;
+}
+.vision-image img {
+  width: 100%;
+  border-radius: 2rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+.core-values {
+  padding: 5rem 0;
+  border-bottom: #333 solid 2px;
+}
+.core-values p {
+  padding-top: 0;
+}
+
+.core-values ul {
+  font-size: 1.6rem;
+  color: #333;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.core-values ul li h3 {
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  /* background-color: darkgoldenrod; */
+  /* background-color: rgb(18, 26, 88); */
+  padding: 1rem;
+  color: #fff;
+  color: #777777;
+  border-radius: 1rem;
+}
+
+.core-values ul li {
+  padding: 2rem;
+  line-height: 1.5;
+  color: #777777;
+  /* box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); */
+  width: 30rem;
+  text-align: center;
+}
+.about-us .our-strengths {
+  padding: 5rem 0;
+}
+.about-us .our-strengths h1 {
+  width: 50%;
+  padding: 1rem;
+  background-color: var(--light-blue);
+  color: var(--dark-blue);
+  border-radius: 1rem;
+}
+.about-us .our-strengths p {
+  padding-top: 0;
+}
+.about-us .our-strengths ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-top: 2rem;
+  gap: 3rem;
+}
+.about-us .our-strengths ul li {
+  padding-bottom: 2rem;
+  padding-right: 1rem;
+  border-right: orange solid 2px;
+  box-shadow: 0 0.2rem rgba(0, 0, 0, 0.15);
+}
+.about-us .our-strengths ul li:last-child {
+  border-right: none;
+}
+.about-us .our-strengths ul li:nth-child(3) {
+  border-right: none;
+}
+.about-us .our-strengths ul li h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #777777;
+  padding-bottom: 1rem;
+}
+/* .grid-our-strength{
+  display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 10rem;
+} */

@@ -1,0 +1,84 @@
+.contact-us .background-image {
+  background: linear-gradient(rgba(210, 110, 110, 0.5), rgba(153, 72, 18, 0.5)),
+    url('../../assets/pumps.jpg');
+  height: 50vh;
+  /* background-size: 1545px 1080px; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-attachment: fixed; */
+}
+
+.contact-us form {
+  /* background: var(--dark-blue); */
+  padding: 2rem 3.5rem 3.5rem;
+  border-radius: 1rem;
+  text-align: center;
+   background-color: hsl(0, 0%, 96%);
+   margin-bottom: 5rem;
+}
+.contact-us .heading {
+  font-size: 3.5rem;
+  /* margin-top: 0; */
+}
+.contact-us .field-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.contact-us .field-box input,
+.contact-us .field-box textarea {
+  padding: 1.5rem;
+
+  border: 0.1rem solid var(--light-blue);
+  font-size: 1.6rem;
+  border-radius: 1rem;
+}
+.contact-us .field-box input:focus,
+.contact-us .field-box textarea:focus {
+  border-color: orange;
+}
+
+.contact-us .field-box textarea {
+  grid-column: 1/-1;
+  height: 26rem;
+}
+.contact-us button {
+  margin-top: 2rem;
+  cursor: pointer;
+  animation: unset;
+  z-index: 1;
+  opacity: 1;
+  padding: 1rem 4rem;
+  background-color: var(--dark-blue);
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.4rem;
+}
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  backdrop-filter: blur(3px);
+  z-index: 5;
+  position: relative;
+  min-height: 50vh;
+  padding: 2rem;
+  gap: 1rem;
+  font-size: 1.6rem;
+}
+.contact-info h5 {
+  font-size: 2rem;
+}
+.contact-us h2 {
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: hsl(0, 0%, 29%);
+
+ padding: 5rem 0 2rem;
+}

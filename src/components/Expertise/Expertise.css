@@ -1,0 +1,32 @@
+.expertise{
+    background: linear-gradient(#219ebc, #023047);
+    background: #023047;
+   padding: 5rem 0; 
+}
+
+.expertise h2{
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+.expertise p{
+  font-size: 1.6rem;
+  line-height: 2;
+  color: #ffff;
+
+}
+.expertise h3{
+  font-size: 2.5rem;
+}
+.expertise .head{
+  padding:  3rem 0;
+}
+.expertise .headers{
+
+ color: var(--light-blue);
+ padding: 2rem 0;
+}
+.right-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10rem;
+}
