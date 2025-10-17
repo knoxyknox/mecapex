@@ -1,5 +1,4 @@
 import React from 'react';
-import { useEffect } from 'react';
 import './OurServices.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -8,7 +7,6 @@ import 'swiper/css/navigation';
 import { Navigation, Pagination } from 'swiper/modules';
 import { services } from '../../assets/assets';
 import { Link } from 'react-router-dom';
-
 const OurServices = () => {
   return (
     <section className='our-services'>
@@ -35,25 +33,31 @@ const OurServices = () => {
             }}
             className='my-swiper'
           >
-            {services.map((service, index) => (
-              <SwiperSlide key={index} className='card'>
-                <div className='card-container'>
-                  <div className='card-wrapper'>
-                    <div className='card-image'>
-                      <img src={service.img} alt={service.title} />
+            {services.map((service, index) => {
+              const slug = service.title
+                .toLowerCase()
+                .trim()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/(^-|-$)/g, '');
+              return (
+                <SwiperSlide key={index} className='card'>
+                  <div className='card-container'>
+                    <div className='card-wrapper'>
+                      <div className='card-image'>
+                        <img src={service.img} alt={service.title} />
+                      </div>
+                      <div className='card-content'>
+                        <h5>{service.title}</h5>
+                        <p>{service.description}</p>
+                      </div>
+                      <Link to={`/Our-Services#${slug}`}>
+                        <button>{service.btn}</button>
+                      </Link>
                     </div>
-                    <div className='card-content'>
-                      <h5>{service.title}</h5>
-                      <p>{service.description}</p>
-                    </div>
-                    <Link to='./Our-Services'>
-                      {' '}
-                      <button>{service.btn}</button>
-                    </Link>
                   </div>
-                </div>
-              </SwiperSlide>
-            ))}
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
         </div>
       </div>
