@@ -65,8 +65,8 @@
 } */
 
 .hero {
-  height: 75rem;
-  height: 100vh;
+  height: 80rem;
+  /* height: 100vh; */
   position: relative;
   color: white;
   overflow: hidden;
@@ -100,7 +100,6 @@
 
 .hero .container {
   width: 100%;
-  max-width: 1200px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -120,13 +119,12 @@
   z-index: 2;
   opacity: 0;
   animation: zoomIn 1s ease forwards;
-  animation-delay: .2s;
+  animation-delay: 0.2s;
 }
 
 .hero h1 {
-  font-size: clamp(5rem, 5vw, 4rem);
+font-size: 5rem;
   margin-bottom: 1rem;
-
   opacity: 0;
   animation: slideLeft 3s ease forwards;
   animation-delay: 1.5s;
@@ -137,9 +135,9 @@
   margin-bottom: 2rem;
   color: orange;
   font-weight: 500;
-   opacity: 0;
+  opacity: 0;
   animation: zoomIn 1s ease forwards;
-animation-delay: 1s;
+  animation-delay: 1s;
 }
 
 .hero button {
@@ -153,8 +151,7 @@ animation-delay: 1s;
   transition: background-color 0.3s ease;
   opacity: 0;
   animation: zoomIn 1s ease forwards;
-animation-delay: .7s;
-  
+  animation-delay: 0.7s;
 }
 
 .hero button:hover {
@@ -254,5 +251,15 @@ animation-delay: .7s;
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media(max-width:768px){
+ 
+  .hero-container{
+    padding: 3rem 1rem;
+  }
+  .hero h1 {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
   }
 }

@@ -83,3 +83,12 @@
   border-top: 1px solid #444;
   font-size: 1.4rem;
 }
+@media(max-width:768px){
+  .footer .footer-logo{
+    grid-template-columns: 1fr;
+    gap: 5rem;
+  }
+  .footer .container{
+    gap: 5rem;
+  }
+}

@@ -39,3 +39,17 @@ background-color: hsl(0, 0%, 96%);
 .our-client .partner{
   padding: 5rem 0;
 }
+
+@media(max-width:768px){
+  .client-img-container{
+    justify-content: center;
+  }
+}
+.client-image{
+  flex: 1 1 12rem;
+  max-width: 18rem;
+  height: 6rem;
+}
+.client-image:nth-child(even){
+  border-right: none;
+}

@@ -6,7 +6,7 @@
     url('../../assets/pumps.jpg');
 
   height: 50vh;
-  background-size: 1545px 1080px;
+  /* background-size: 1545px 1080px; */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

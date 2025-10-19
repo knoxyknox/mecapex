@@ -100,3 +100,16 @@
 .my-swiper .swiper-pagination-bullet-active {
   background: #cc7000;
 }
+
+@media (max-width: 768px) {
+  .card-container {
+    text-align: center;
+  }
+  .our-services .card-content {
+    text-align: center;
+   
+  }
+  .card-container button{
+    margin-top: 3rem;
+  }
+}

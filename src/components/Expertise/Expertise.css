@@ -30,3 +30,9 @@
   grid-template-columns: 1fr 1fr;
   gap: 10rem;
 }
+@media(max-width:940px){
+  .right-grid{
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

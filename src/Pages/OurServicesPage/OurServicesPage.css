@@ -26,9 +26,6 @@ border-bottom: none;
   /* border-radius: 1rem; */
   margin: auto;
   padding: 1rem;
-  color: #333;
-  color: hsl(0, 0%, 29%);
-  color: #fff;
   color: var(--dark-blue);
   margin-bottom: 2rem;
 }

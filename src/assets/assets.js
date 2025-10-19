@@ -65,7 +65,7 @@ export const services = [
     title: 'Procurement Services',
     img: procurement_services,
     description:
-      'We specialize in the sourcing and supply of a wide rangE equipment and tools for the oil and gas industry.',
+      'We specialize in the sourcing and supply of a wide range equipment and tools for the oil and gas industry.',
     btn: 'read more',
     path: '/Procurement',
   },

@@ -25,8 +25,8 @@ const Hero = () => {
         loop={true}
         speed={2000}
         autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
+          delay: 5000,
+          disableOnInteraction: true,
         }}
         breakpoints={{
           320: { slidesPerView: 1 },

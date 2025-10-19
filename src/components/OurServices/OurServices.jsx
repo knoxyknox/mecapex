@@ -28,7 +28,7 @@ const OurServices = () => {
             }}
             breakpoints={{
               320: { slidesPerView: 1 },
-              767: { slidesPerView: 2 },
+              629: { slidesPerView: 2 },
               1024: { slidesPerView: 3 },
             }}
             className='my-swiper'

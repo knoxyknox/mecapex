@@ -34,7 +34,7 @@ const Products = () => {
               disableOnInteraction: false,
             }}
             breakpoints={{
-              320: { slidesPerView: 5 },
+              320: { slidesPerView: 2 },
               767: { slidesPerView: 5 },
               1024: { slidesPerView: 7 },
             }}

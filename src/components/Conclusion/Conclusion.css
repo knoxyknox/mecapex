@@ -9,26 +9,73 @@
 .conclusion {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url('../../assets/truck.jpg') center/cover;
-    background-attachment: fixed;
-  height: 100vh;
+  background-attachment: fixed;
+  height: 80rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  /* text-align: center; */
   color: white;
   margin-top: 70px;
 }
-.conclusion h3 {
-  /* background-color: rgb(226, 15, 15); */
+.conclusion .container{
+  padding: 5rem 0;
+}
+.conclusion .content-container {
+  
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(3px);
+  border-radius: 1rem;
+  border-top: solid orange 0.5rem;
   padding: 10rem;
+ 
+  
+}
+.conclusion h3 {
   font-size: 3.5rem;
-  margin-bottom: 2rem;
   line-height: 1.5;
   letter-spacing: 0.025em;
   font-family: 'Nunito', sans-serif;
   font-weight: 400;
-  border-radius: 1rem;
-  border-top: solid orange .5rem;
-  background-color: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(3px);
+}
+@media (max-width: 1040px){
+  .conclusion h3{
+    font-size: 3.3rem
+  };
+}
+.conclusion .content-container{
+  padding: 5rem;
+}
+@media(max-width: 920px){
+  .conclusion h3{
+    font-size:3.2rem
+  }
+}
+@media(max-width:800px){
+  .conclusion h3{
+    font-size: 2.8rem;
+  
+  }
+}
+@media(max-width:650px){
+  .conclusion h3{
+    font-size: 2.5rem;
+    padding: 1rem;
+  }
+}
+@media(max-width:460px){
+  .conclusion h3{
+    font-size: 2rem;
+  }
+}
+@media(max-width:370px){
+  .conclusion h3{
+padding: .5rem !important
+  }
+}
+@media(max-width:343px){
+  .conclusion h3{
+padding: .1rem !important
+
+  }
 }

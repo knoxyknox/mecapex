@@ -144,9 +144,7 @@ const AboutUs = () => {
                   </p>
                 </li>
               </ul>
-              {/* <div className='expert-image'>
-                <img src={images.experts} alt= 'expert imaage' />
-              </div> */}
+             
             </div>
           </div>
         </div>

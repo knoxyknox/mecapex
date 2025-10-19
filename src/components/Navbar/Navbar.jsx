@@ -5,6 +5,13 @@ import { NavLink, Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [click, setClick] = useState(false);
+  const handleClick = () => {
+    setClick(!click);
+  };
+  const closeMobileMenu = () => {
+    setClick(false);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,13 +28,12 @@ const Navbar = () => {
     window.scrollTo({ top: 0, behavior: 'auto' });
   }, [location.pathname]);
 
-  
   return (
-    <nav className={scrolled ? 'scrolled' : ''}>
+    <nav className={`${scrolled ? 'scrolled' : ''} ${click ? 'active' : ''}`}>
       <div className='container'>
-        <div className='navbar'>
+        <div className={`navbar ${click ? 'active' : ''}`}>
           <div className='logo'>
-            <Link to='/'>
+            <Link to='/' onClick={closeMobileMenu}>
               <div className='image'>
                 <img src={images.logo_m} alt='logo image' />
               </div>
@@ -38,11 +44,11 @@ const Navbar = () => {
             </Link>
           </div>
 
-          <ul className='list-menu'>
+          <ul className={`list-menu ${click ? 'active' : ''}`}>
             <NavLink
               to='/'
               className={({ isActive }) => (isActive ? 'active' : '')}
-             
+              onClick={closeMobileMenu}
             >
               Home
             </NavLink>
@@ -50,13 +56,15 @@ const Navbar = () => {
             <NavLink
               to='/About-Us'
               className={({ isActive }) => (isActive ? 'active' : '')}
+              onClick={closeMobileMenu}
             >
-              About us
+              About Us
             </NavLink>
 
             <NavLink
               to='/Our-Services'
               className={({ isActive }) => (isActive ? 'active' : '')}
+              onClick={closeMobileMenu}
             >
               Our Services
             </NavLink>
@@ -64,10 +72,19 @@ const Navbar = () => {
             <NavLink
               to='/Contact-Us'
               className={({ isActive }) => (isActive ? 'active' : '')}
+              onClick={closeMobileMenu}
             >
               contact Us
             </NavLink>
           </ul>
+          <div
+            className={`hamburger ${click ? 'active' : ''}`}
+            onClick={handleClick}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </div>
     </nav>
