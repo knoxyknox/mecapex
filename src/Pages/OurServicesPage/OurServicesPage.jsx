@@ -3,7 +3,7 @@ import './OurServicesPage.css';
 import { servicesList } from '../../assets/assets';
 import { useLocation } from 'react-router-dom';
 import FadeInSection from '../../components/FadeInSection/FadeInSection';
-
+import { motion } from 'framer-motion';
 const OurServicesPage = () => {
   const location = useLocation();
 
@@ -35,9 +35,9 @@ const OurServicesPage = () => {
   return (
     <section className='our-services-page'>
       <div className='background-image'>
-        {' '}
         <h1>Our Services</h1>
       </div>
+
       <div className='container'>
         {servicesList.map((item, index) => {
           const slug = item.title
@@ -45,8 +45,20 @@ const OurServicesPage = () => {
             .trim()
             .replace(/[^a-z0-9]+/g, '-')
             .replace(/(^-|-$)/g, '');
+
           return (
-            <FadeInSection>
+            <motion.div
+              initial={{ opacity: 0, x: index % 2 === 0 ? 100 : -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 0.8,
+                delay: index * 0.2,
+                type: 'spring',
+                stiffness: 50,
+                damping: 20,
+              }}
+              viewport={{ once: true }}
+            >
               <div className='services-wrapper' key={index} id={slug}>
                 <h3>{item.title}</h3>
                 <div className='services-content'>
@@ -56,7 +68,7 @@ const OurServicesPage = () => {
                   <p>{item.description}</p>
                 </div>
               </div>
-            </FadeInSection>
+            </motion.div>
           );
         })}
       </div>
