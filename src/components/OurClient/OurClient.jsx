@@ -15,20 +15,19 @@ const OurClient = () => {
         <div className='client-img-container'>
           {clients.map(client => (
             <div className='client-image' key={client.id}>
-              <img src={client.img} alt={client.alt} />
+              <img src={client.img} alt={client.alt} loading='lazy' />
             </div>
           ))}
         </div>
-         <div className='partner'>
-            <h2>Partner Affiliation</h2>
-            <p>
-              We collaborate with various partners, including leading suppliers,
-              logistics providers, and industry regulators. Our affiliations
-              ensure that we maintain quality standards, adhere to best
-              practices, and continually improve our service offerings.
-            </p>
-          
-          </div>
+        <div className='partner'>
+          <h2>Partner Affiliation</h2>
+          <p>
+            We collaborate with various partners, including leading suppliers,
+            logistics providers, and industry regulators. Our affiliations
+            ensure that we maintain quality standards, adhere to best practices,
+            and continually improve our service offerings.
+          </p>
+        </div>
       </div>
     </section>
   );

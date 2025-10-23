@@ -1,12 +1,13 @@
 .contact-us .background-image {
   background: linear-gradient(rgba(210, 110, 110, 0.5), rgba(153, 72, 18, 0.5)),
     url('../../assets/pumps.jpg');
+  height: 39rem;
   height: 50vh;
   /* background-size: 1545px 1080px; */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  /* background-attachment: fixed; */
+
 }
 
 .contact-us form {
@@ -63,10 +64,10 @@
   justify-content: center;
   text-align: center;
   color: #fff;
-  backdrop-filter: blur(3px);
   z-index: 5;
   position: relative;
-  min-height: 50vh;
+min-height: 45rem;
+min-height: 50vh;
   padding: 2rem;
   gap: 1rem;
   font-size: 1.6rem;
@@ -81,4 +82,15 @@
   color: hsl(0, 0%, 29%);
 
  padding: 5rem 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .contact-us .field-box {
+    grid-template-columns: 1fr;
+  }
+}
+@media(max-width:400px){
+  .contact-info{
+    min-height: 60vh;
+  }
 }

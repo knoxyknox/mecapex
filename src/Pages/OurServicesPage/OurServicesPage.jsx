@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import './OurServicesPage.css';
 import { servicesList } from '../../assets/assets';
 import { useLocation } from 'react-router-dom';
+import FadeInSection from '../../components/FadeInSection/FadeInSection';
 
 const OurServicesPage = () => {
   const location = useLocation();
@@ -20,7 +21,7 @@ const OurServicesPage = () => {
           target.getBoundingClientRect().top +
           window.scrollY -
           headerHeight -
-          12; 
+          12;
         window.scrollTo({ top, behavior: 'smooth' });
 
         try {
@@ -45,15 +46,17 @@ const OurServicesPage = () => {
             .replace(/[^a-z0-9]+/g, '-')
             .replace(/(^-|-$)/g, '');
           return (
-            <div className='services-wrapper' key={index} id={slug}>
-              <h3>{item.title}</h3>
-              <div className='services-content'>
-                <div className='services-image'>
-                  <img src={item.img} alt='' />
+            <FadeInSection>
+              <div className='services-wrapper' key={index} id={slug}>
+                <h3>{item.title}</h3>
+                <div className='services-content'>
+                  <div className='services-image'>
+                    <img src={item.img} alt='' />
+                  </div>
+                  <p>{item.description}</p>
                 </div>
-                <p>{item.description}</p>
               </div>
-            </div>
+            </FadeInSection>
           );
         })}
       </div>

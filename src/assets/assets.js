@@ -263,9 +263,9 @@ export const productsList = [
   },
 ];
 export const heroImg = [
-  { id: 1, img: pumps, alt: pumps },
-  { id: 2, img: truck, alt: truck },
-  { id: 1, img: procurement, alt: procurement },
+  { id: 1, img: pumps, alt: 'Indrustrial pumps' },
+  { id: 2, img: truck, alt: 'logistics trucks' },
+  { id: 3, img: procurement, alt: 'procument equipment' },
 ];
 
 export const expertise = [

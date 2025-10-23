@@ -1,47 +1,75 @@
-import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import React, { Suspense, lazy, memo } from 'react';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
-import Hero from './components/Hero/Hero';
-import OurServices from './components/OurServices/OurServices';
-import AboutUs from './components/AboutUs/AboutUs';
-import Products from './components/Products/Products';
-import Expertise from './components/Expertise/Expertise';
-import Conclusion from './components/Conclusion/Conclusion';
-import OurClient from './components/OurClient/OurClient';
-import Footer from './components/Footer/Footer';
-import Procurement from './Pages/Procurement/Procurement';
-import Logistics from './Pages/Logistics/Logistics';
-import OurServicesPage from './Pages/OurServicesPage/OurServicesPage';
-import ContactUs from './Pages/ContactUs/ContactUs';
+import FadeInSection from './components/FadeInSection/FadeInSection';
 
+const Hero = lazy(() => import('./components/Hero/Hero'));
+const OurServices = lazy(() => import('./components/OurServices/OurServices'));
+const AboutUs = lazy(() => import('./components/AboutUs/AboutUs'));
+const Products = lazy(() => import('./components/Products/Products'));
+const Expertise = lazy(() => import('./components/Expertise/Expertise'));
+const Conclusion = lazy(() => import('./components/Conclusion/Conclusion'));
+const OurClient = lazy(() => import('./components/OurClient/OurClient'));
+const Footer = lazy(() => import('./components/Footer/Footer'));
+const Procurement = lazy(() => import('./Pages/Procurement/Procurement'));
+const Logistics = lazy(() => import('./Pages/Logistics/Logistics'));
+const OurServicesPage = lazy(() =>
+  import('./Pages/OurServicesPage/OurServicesPage')
+);
+const ContactUs = lazy(() => import('./Pages/ContactUs/ContactUs'));
+const MemoizedNavbar = memo(Navbar);
+
+const MemoizedFadeInSection = memo(FadeInSection);
 const App = () => {
+  const location = useLocation();
   return (
     <div>
-      <Navbar />
-      <Routes>
-        <Route
-          path='/'
-          element={
-            <>
-              <Hero />
-              <OurServices />
-              <Expertise />
-              <Products />
-              <Conclusion />
-              <OurClient />
-            </>
-          }
-        />
-        <Route path='/About-Us' element={<AboutUs />} />
-        <Route path='/Procurement' element={<Procurement />} />
-        <Route path='/Logistics-Hauling-Services' element={<Logistics />} />
-        <Route path='/Our-Services' element={<OurServicesPage />} />
-        <Route path='/Contact-us' element={<ContactUs/>}/>
-      </Routes>
-      <Footer />
+      <MemoizedNavbar />
+      <Suspense
+        fallback={
+          <div className='loading-container'>
+            <div className='loading-spinner'></div>
+            <p>Mecapex Loading Content...</p>
+          </div>
+        }
+      >
+        <Routes>
+          <Route
+            path='/'
+            element={
+              <>
+                <Hero />
+                <MemoizedFadeInSection>
+                  <OurServices />
+                </MemoizedFadeInSection>
+                <MemoizedFadeInSection>
+                  <Expertise />
+                </MemoizedFadeInSection>
+
+                <MemoizedFadeInSection>
+                  <Products />
+                </MemoizedFadeInSection>
+                <MemoizedFadeInSection>
+                  <Conclusion />
+                </MemoizedFadeInSection>
+                <MemoizedFadeInSection>
+                  <OurClient />
+                </MemoizedFadeInSection>
+              </>
+            }
+          />
+          <Route path='/About-Us' element={<AboutUs />} />
+          <Route path='/Procurement' element={<Procurement />} />
+          <Route path='/Logistics-Hauling-Services' element={<Logistics />} />
+          <Route path='/Our-Services' element={<OurServicesPage />} />
+          <Route path='/Contact-us' element={<ContactUs />} />
+        </Routes>
+        <MemoizedFadeInSection>
+          <Footer />
+        </MemoizedFadeInSection>
+      </Suspense>
     </div>
   );
 };
 
 export default App;
-

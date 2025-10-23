@@ -45,7 +45,7 @@ const Products = () => {
                 <div className='product-card-container'>
                   <div className='product-card-wrapper'>
                     <div className='product-card-image'>
-                      <img src={product.img} alt='' />
+                      <img src={product.img} alt={product.alt}  loading='lazy'/>
                     </div>
                   </div>
                 </div>

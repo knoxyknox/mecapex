@@ -10,7 +10,11 @@ const Navbar = () => {
     setClick(!click);
   };
   const closeMobileMenu = () => {
-    setClick(false);
+   if(window.innerWidth <= 768){
+     setTimeout(() => setClick(false), 150); 
+   } else {
+     setClick(false);
+   }  
   };
 
   useEffect(() => {

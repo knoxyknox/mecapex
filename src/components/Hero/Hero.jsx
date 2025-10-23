@@ -1,65 +1,62 @@
-import React from 'react';
+
+import React, { memo, useEffect } from 'react';
 import './Hero.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import { Autoplay, FreeMode, A11y } from 'swiper/modules';
+import { Autoplay, A11y } from 'swiper/modules';
 import { heroImg } from '../../assets/assets';
-import { useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 
 const Hero = () => {
-  const locatiion = useLocation();
+  const location = useLocation();
 
+  // Fix scroll effect
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
-  }, [locatiion.pathname]);
+  }, [location.pathname]);
+
+
+
   return (
-    <section className='hero' role='banner'>
+    <section className="hero" role="banner">
       <Swiper
-        modules={[Autoplay, FreeMode, A11y]}
+        modules={[Autoplay, A11y]}
         spaceBetween={0}
-        freeMode={true}
         slidesPerView={1}
-        loop={true}
+        loop={heroImg && heroImg.length > 1}
         speed={2000}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: true,
-        }}
-        breakpoints={{
-          320: { slidesPerView: 1 },
-          767: { slidesPerView: 1 },
-          1024: { slidesPerView: 1 },
-        }}
-        className='hero-carousel'
+        autoplay={{ delay: 5000, disableOnInteraction: true }}
+        className="hero-carousel"
       >
         {heroImg && heroImg.length > 0 ? (
-          heroImg.map((list, index) => (
-            <SwiperSlide key={index}>
+          heroImg.map((list) => (
+            <SwiperSlide key={list.id}>
               <img
                 src={list.img}
                 alt={list.alt}
-                onError={e => (e.target.src = 'path/to/fallback-image.jpg')}
+                loading="lazy"
+                onError={(e) => {
+                  e.target.style.display = 'none'; 
+                  e.target.parentElement.style.backgroundColor = '#ccc'; 
+                }}
               />
             </SwiperSlide>
           ))
         ) : (
           <SwiperSlide>
-            <img src='path/to/fallback-image.jpg' alt='Fallback' />
+            <h1>no images available</h1>
           </SwiperSlide>
         )}
       </Swiper>
-      <div className='container'>
-        <div className='hero-container'>
+      <div className="container">
+        <div className="hero-container">
           <h1>
-            Your Trusted Partner for Procurement, Logistics, Petroleum, Oil &
-            Gas Services and More
+            Your Trusted Partner for Procurement, Logistics, Petroleum, Oil & Gas
+            Services and More
           </h1>
           <p>Delivering excellence from 2024 and beyond</p>
-          <Link to='/Contact-Us'>
-            <button aria-label='Contact us for services'>Get in touch</button>
+          <Link to="/Contact-Us">
+            <button aria-label="Contact us for services">Get in touch</button>
           </Link>
         </div>
       </div>
@@ -67,4 +64,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default memo(Hero);

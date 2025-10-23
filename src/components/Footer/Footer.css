@@ -29,7 +29,6 @@
   align-items: center;
   gap: 1rem;
   padding-bottom: 1rem ;
-
 }
 .footer-logo .contact .address i {
   font-size: 2rem;
@@ -83,6 +82,12 @@
   border-top: 1px solid #444;
   font-size: 1.4rem;
 }
+@media(max-width:980px){
+  .footer .footer-logo{
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+  }
+}
 @media(max-width:768px){
   .footer .footer-logo{
     grid-template-columns: 1fr;
@@ -90,5 +95,16 @@
   }
   .footer .container{
     gap: 5rem;
+  }
+}
+@media(max-width:453px){
+  .footer-logo .contact .address{
+
+  align-items: unset;
+
+  }
+  .footer-logo .contact .address .bx-envelope{
+    
+    padding-top: .5rem;
   }
 }

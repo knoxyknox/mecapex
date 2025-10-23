@@ -116,16 +116,15 @@ nav.scrolled {
 }
 
 @media (max-width: 768px) {
-nav{
-  width: 100vw;
-  left: 0;
-}  
+  nav {
+    width: 100vw;
+    left: 0;
+  }
 
-
-  nav.active{
+  nav.active {
     background-color: rgba(246, 147, 9);
   }
-  
+
   .hamburger {
     display: flex;
     flex-direction: column;
@@ -143,18 +142,17 @@ nav{
     height: 100vh;
     text-align: center;
     padding: 2rem 0;
-
   }
+
   .navbar .list-menu.active {
     display: flex;
   }
-   .list-menu a.active{
-     padding-bottom: 0.5rem;
-  box-shadow: none;
-  }
 
-  /* .list-menu a:focus {
-  outline: 2px solid #fff;
-  outline-offset: 2px;
-} */
+  .list-menu a.active {
+    box-shadow: none;
+    padding-bottom: 0;
+  }
+  .list-menu a:hover {
+    box-shadow: none;
+  }
 }

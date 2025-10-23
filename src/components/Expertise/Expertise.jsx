@@ -1,7 +1,7 @@
-import React from 'react';
+import React,{memo} from 'react';
 import './Expertise.css';
 import { expertise } from '../../assets/assets';
-import { useEffect } from 'react';
+
 
 const Expertise = () => {
  
@@ -10,7 +10,7 @@ const Expertise = () => {
       {expertise.map((item, index) => (
         <div className='container' key={index}>
           <div className='expertise-intro'>
-            <h2 className='headers'>industries expertise</h2>
+            <h2 className='headers header-h2'>industries expertise</h2>
             <p>{item.intro}</p>
           </div>
           <div className='right-grid'>
@@ -31,4 +31,4 @@ const Expertise = () => {
   );
 };
 
-export default Expertise;
+export default memo(Expertise);

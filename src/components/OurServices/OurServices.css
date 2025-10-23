@@ -1,13 +1,10 @@
-.our-services{
+.our-services {
   padding: 5rem 0;
-  /* background-color: hsl(0, 0%, 96%); */
 }
 
 .our-services h2 {
-  /* margin-top: 3rem; */
   font-size: 3rem;
-  /* color: #333; */
-  color: hsl(0, 0%, 29%)
+  color: hsl(0, 0%, 29%);
 }
 
 .our-services .card {
@@ -22,7 +19,6 @@
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   height: 50rem;
   transition: all 0.3s ease;
- 
 }
 .card-container:hover {
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
@@ -44,18 +40,16 @@
   margin-bottom: 1rem;
   color: #333;
   color: hsl(0, 0%, 29%);
-  
 }
 .card-content p {
   font-size: 1.4rem;
-  
-    color: hsl(0, 0%, 29%);
+  color: hsl(0, 0%, 29%);
   line-height: 1.6;
 }
 .card-container button {
   margin-top: 2rem;
   padding: 0.8rem 1.6rem;
-  /* background-color: #007bff; */
+
   background-color: orange;
   color: #fff;
   border: none;
@@ -66,26 +60,25 @@
   transition: background-color 0.3s ease;
 }
 .card-container button:hover {
-  /* background-color: #0056b3; */
   background-color: #cc7000;
 }
 
-
-
+.my-swiper {
+  padding: 0 1rem;
+}
 .my-swiper .swiper-button-next,
 .my-swiper .swiper-button-prev {
-  
   color: orange;
   width: 3rem;
   background-color: #555;
   padding: 1rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
-.my-swiper .swiper-button-next{
-  right: .1rem!important;
+.my-swiper .swiper-button-next {
+  right: 0.1rem !important;
 }
-.my-swiper .swiper-button-prev{
-  left: .1rem!important;
+.my-swiper .swiper-button-prev {
+  left: 0.1rem !important;
 }
 
 .my-swiper .swiper-button-disabled {
@@ -107,9 +100,27 @@
   }
   .our-services .card-content {
     text-align: center;
-   
+    height: auto;
   }
-  .card-container button{
+  .card-container button {
     margin-top: 3rem;
+  }
+  .our-services .card {
+    /* width: 100%; */
+    height: auto;
+  }
+}
+@media (max-width: 400px) {
+  .card-container {
+    height: auto;
+  }
+}
+
+@media (max-width: 341px) {
+  .card-wrapper .card-image {
+    max-height: 15rem;
+  }
+  .card-image img {
+    height: 100%;
   }
 }
