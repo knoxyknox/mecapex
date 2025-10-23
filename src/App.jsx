@@ -29,7 +29,7 @@ const App = () => {
         fallback={
           <div className='loading-container'>
             <div className='loading-spinner'></div>
-            <p>Mecapex Loading Content...</p>
+            <p> Loading...</p>
           </div>
         }
       >

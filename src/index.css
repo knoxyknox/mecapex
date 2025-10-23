@@ -58,6 +58,7 @@ html {
   background-color: #f8f8f8;
   color: #333;
   font-family: Arial, sans-serif;
+  text-align: center;
 }
 
 .loading-spinner {
@@ -73,6 +74,7 @@ html {
 .loading-container p {
   font-size: 3rem;
   font-weight: 500;
+  color: orange;
 }
 
 @keyframes spin {
