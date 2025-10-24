@@ -14,10 +14,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* text-align: center; */
   color: white;
   margin-top: 70px;
 }
+
+
 .conclusion .container{
   padding: 5rem 0;
 }

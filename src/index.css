@@ -9,18 +9,23 @@
   font-family: sans-serif;
 }
 
+html, body {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; 
+}
 html {
   font-size: 62.5%;
+  
 }
 :root {
   --main-color: rgb(2, 2, 14);
   --dark-blue: #023047;
   --light-blue: #92cfef;
   /* new */
-  --nav-height: 7.2rem;     /* 72px */
-  --container-max: 120rem;  /* 1200px */
-  --gutter: 1.6rem;         /* 16px */
-  --space-sm: 0.8rem;       /* 8px */
+  --nav-height: 7.2rem;     
+  --container-max: 120rem;  
+  --gutter: 1.6rem;        
+  --space-sm: 0.8rem;       
   --space: 1.6rem; 
 }
 *,

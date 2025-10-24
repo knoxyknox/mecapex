@@ -6,8 +6,18 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, FreeMode } from 'swiper/modules';
+import { throttle } from 'lodash';
+import { useEffect } from 'react';
+
+const handleScroll = throttle(() => {
+  console.log('Scroll event');
+}, 100);
 
 const Products = () => {
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   return (
     <section className='products'>
       <div className='container'>
@@ -40,12 +50,12 @@ const Products = () => {
             }}
             className='product-carousel'
           >
-            {productsList.map((product, idex) => (
-              <SwiperSlide key={idex} className='product-card'>
+            {productsList.map((product, index) => (
+              <SwiperSlide key={index} className='product-card'>
                 <div className='product-card-container'>
                   <div className='product-card-wrapper'>
                     <div className='product-card-image'>
-                      <img src={product.img} alt={product.alt}  loading='lazy'/>
+                      <img src={product.img} alt={product.alt} loading='lazy' />
                     </div>
                   </div>
                 </div>

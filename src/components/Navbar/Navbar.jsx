@@ -11,7 +11,7 @@ const Navbar = () => {
   };
   const closeMobileMenu = () => {
    if(window.innerWidth <= 768){
-     setTimeout(() => setClick(false), 150); 
+     setTimeout(() => setClick(false), 500); 
    } else {
      setClick(false);
    }  

@@ -1,19 +1,17 @@
-
-import React, {  useMemo } from 'react';
+import React, { memo, useMemo } from 'react';
 import './OurServices.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import 'swiper/css/pagination'; 
-import 'swiper/css/navigation'; 
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import { Navigation, Pagination } from 'swiper/modules';
 import { services } from '../../assets/assets';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const OurServices = () => {
-
   const slugs = useMemo(() => {
-    return services.map((service) =>
+    return services.map(service =>
       service.title
         .toLowerCase()
         .trim()
@@ -52,7 +50,7 @@ const OurServices = () => {
             className='my-swiper'
           >
             {services.map((service, index) => {
-              const slug = slugs[index]; 
+              const slug = slugs[index];
               return (
                 <SwiperSlide key={index} className='card'>
                   <motion.div
@@ -70,10 +68,10 @@ const OurServices = () => {
                     <div className='card-container'>
                       <div className='card-wrapper'>
                         <div className='card-image'>
-                          <img 
-                            src={service.img} 
-                            alt={service.title} 
-                            loading="lazy" 
+                          <img
+                            src={service.img}
+                            alt={service.title}
+                            loading='lazy'
                           />
                         </div>
                         <div className='card-content'>
@@ -96,4 +94,4 @@ const OurServices = () => {
   );
 };
 
-export default OurServices; 
+export default memo(OurServices);

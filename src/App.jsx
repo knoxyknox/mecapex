@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, memo } from 'react';
+import React, { Suspense, lazy, memo, useState, useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import FadeInSection from './components/FadeInSection/FadeInSection';
@@ -17,11 +17,23 @@ const OurServicesPage = lazy(() =>
   import('./Pages/OurServicesPage/OurServicesPage')
 );
 const ContactUs = lazy(() => import('./Pages/ContactUs/ContactUs'));
-const MemoizedNavbar = memo(Navbar);
 
+const MemoizedNavbar = memo(Navbar);
 const MemoizedFadeInSection = memo(FadeInSection);
+
 const App = () => {
   const location = useLocation();
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768);
+
+ 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div>
       <MemoizedNavbar />
@@ -29,7 +41,7 @@ const App = () => {
         fallback={
           <div className='loading-container'>
             <div className='loading-spinner'></div>
-            <p> Loading...</p>
+            <p>Loading...</p>
           </div>
         }
       >
@@ -39,13 +51,16 @@ const App = () => {
             element={
               <>
                 <Hero />
-                <MemoizedFadeInSection>
+                {isDesktop ? (
+                  <MemoizedFadeInSection>
+                    <OurServices />
+                  </MemoizedFadeInSection>
+                ) : (
                   <OurServices />
-                </MemoizedFadeInSection>
+                )}
                 <MemoizedFadeInSection>
                   <Expertise />
                 </MemoizedFadeInSection>
-
                 <MemoizedFadeInSection>
                   <Products />
                 </MemoizedFadeInSection>
@@ -62,7 +77,7 @@ const App = () => {
           <Route path='/Procurement' element={<Procurement />} />
           <Route path='/Logistics-Hauling-Services' element={<Logistics />} />
           <Route path='/Our-Services' element={<OurServicesPage />} />
-          <Route path='/Contact-us' element={<ContactUs />} />
+          <Route path='/Contact-Us' element={<ContactUs />} />
         </Routes>
         <MemoizedFadeInSection>
           <Footer />
