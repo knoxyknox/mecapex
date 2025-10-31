@@ -9,8 +9,6 @@ import { useLocation, Link } from 'react-router-dom';
 
 const Hero = () => {
   const location = useLocation();
-
-  // Fix scroll effect
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
   }, [location.pathname]);

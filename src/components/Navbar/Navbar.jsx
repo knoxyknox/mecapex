@@ -9,12 +9,13 @@ const Navbar = () => {
   const handleClick = () => {
     setClick(!click);
   };
+
+
   const closeMobileMenu = () => {
-   if(window.innerWidth <= 768){
-     setTimeout(() => setClick(false), 500); 
-   } else {
-     setClick(false);
-   }  
+    setTimeout(() => {
+      setClick(false);
+      document.body.style.overflow = 'auto';
+    }, 500);
   };
 
   useEffect(() => {
@@ -27,9 +28,11 @@ const Navbar = () => {
     };
   }, []);
 
+
   const location = useLocation();
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
+      document.body.style.overflow = 'auto';
   }, [location.pathname]);
 
   return (

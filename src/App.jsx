@@ -22,10 +22,9 @@ const MemoizedNavbar = memo(Navbar);
 const MemoizedFadeInSection = memo(FadeInSection);
 
 const App = () => {
-  const location = useLocation();
+  // const location = useLocation();
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768);
 
- 
   useEffect(() => {
     const handleResize = () => {
       setIsDesktop(window.innerWidth >= 768);
@@ -88,3 +87,4 @@ const App = () => {
 };
 
 export default App;
+

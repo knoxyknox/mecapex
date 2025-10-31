@@ -1,5 +1,6 @@
 .about-us {
   background: hsl(0, 0%, 96%);
+  overflow-x: hidden;
 }
 .about-us .background-image {
   background: linear-gradient(rgba(210, 110, 110, 0.5), rgba(153, 72, 18, 0.5)),
@@ -26,7 +27,7 @@
   position: relative;
   opacity: 0;
   animation: slideBottom 3s ease forwards;
-  animation-delay: 1.5s;
+  animation-delay: .1s;
 }
 .about-container {
   display: grid;
@@ -52,7 +53,7 @@
   padding: 2rem;
   opacity: 0;
   animation: slideTop 3s ease forwards;
-  animation-delay: 1.5s;
+  animation-delay: .5s;
   /* height: 20rem; */
 }
 .right-image img {

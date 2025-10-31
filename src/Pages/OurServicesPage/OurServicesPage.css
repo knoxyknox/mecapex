@@ -1,3 +1,6 @@
+.our-services-page{
+  overflow-x: hidden;
+}
 .our-services-page .background-image {
   background: linear-gradient(rgba(210, 110, 110, 0.5), rgba(153, 72, 18, 0.5)),
     url('../../assets/pumps.jpg');
